@@ -6,15 +6,14 @@ jobs:
   Explorando-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "El flujo de trabajo ha sido ejecutado en el evento: ${{ github.event_name }}"
-      - run: echo "El trabajo se está ejecutando en un servidor (${{ runner.os }}) hospedado en GitHub"
-      - run: echo "El nombre de la rama es ${{ github.ref }} y tu repositorio es ${{ github.repository }}"
+      - run: echo El flujo de trabajo ha sido ejecutado
+      - run: echo El trabajo se esta ejecutando en GitHub
+      - run: echo Mostrando informacion del repositorio
       
       - name: Verifica el codigo del repositorio
         uses: actions/checkout@v2
       
       - name: Listar archivos en el repositorio
-        run: |
-          ls ${{ github.workspace }}
+        run: ls
       
-      - run: echo "El estado del trabajo es ${{ job.status }}"
+      - run: echo El estado del trabajo es success
